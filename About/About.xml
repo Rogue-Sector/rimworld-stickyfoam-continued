@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-  <name>Stickyfoam</name>
-  <author>katana</author>
+  <name>Stickyfoam Continued</name>
+  <author>katana (original); BiggestFren (continuation)</author>
   <packageId>katana.stickyfoam</packageId>
-  <description>Adds stickyfoam, a mobility-restricting foam/filth that can be used in various ways.</description>
+  <description>Continues katana's Stickyfoam for RimWorld 1.6. Adds mobility-restricting foam through mortar rounds and IED traps. Replaces the original Stickyfoam: disable the original before enabling this continuation. Original author: katana; original MIT license retained.</description>
   <supportedVersions>
     <li>1.6</li>
   </supportedVersions>
