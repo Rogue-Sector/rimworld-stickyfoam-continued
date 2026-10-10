@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <loadFolders>
-  <v1.5>
+  <v1.6>
     <li>/</li>
-    <li>1.5</li>
+    <li>1.6</li>
     <!-- todo: uncomment and remove other li's when we support CE
     <li IfModActive="CETeam.CombatExtended">ModPatches/CombatExtended/1.5</li>
     <li IfModActive="Aelanna.EccentricTech.DefenseGrid">ModPatches/EccentricTechDefenseGridShared</li>
@@ -11,5 +11,5 @@
     -->
     <li IfModActive="Aelanna.EccentricTech.DefenseGrid">ModPatches/EccentricTechDefenseGridShared</li>
     <li IfModActive="Aelanna.EccentricTech.DefenseGrid">ModPatches/EccentricTechDefenseGridnonCE/1.5</li>
-  </v1.5>
+  </v1.6>
 </loadFolders>

@@ -5,7 +5,7 @@
   <packageId>katana.stickyfoam</packageId>
   <description>Adds stickyfoam, a mobility-restricting foam/filth that can be used in various ways.</description>
   <supportedVersions>
-    <li>1.5</li>
+    <li>1.6</li>
   </supportedVersions>
   <modDependencies>
     <li>

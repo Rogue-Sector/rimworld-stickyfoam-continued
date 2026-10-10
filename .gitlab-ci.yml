@@ -19,14 +19,14 @@ build:
   extends: '.build'
   parallel:
     matrix:
-    - RW_VERSION: ['1.5']
+    - RW_VERSION: ['1.6']
 
 package:
   stage: 'package'
   script:
   - 'mkdir ${CI_PROJECT_TITLE}'
   - 'cp -R About ${CI_PROJECT_TITLE}/'
-  - 'cp -R 1.5 ${CI_PROJECT_TITLE}/'
+  - 'cp -R 1.6 ${CI_PROJECT_TITLE}/'
   - 'cp -R Textures ${CI_PROJECT_TITLE}/'
   - 'cp -R ModPatches ${CI_PROJECT_TITLE}/'
   - 'cp -R LoadFolders.xml ${CI_PROJECT_TITLE}/'
