@@ -26,5 +26,16 @@ namespace Stickyfoam
                 Stickyfoam_Tracker.ClearTracker();
             }
         }
+
+        [HarmonyPatch(typeof(Pawn), nameof(Pawn.Destroy))]
+        static class Patch_Destroy_Stickyfoam_Drawer
+        {
+            [HarmonyPostfix]
+            static void Postfix(Pawn __instance)
+            {
+                if (__instance.Destroyed) Stickyfoam_Tracker.RemoveDrawer(__instance);
+            }
+        }
+
     }
 }

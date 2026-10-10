@@ -16,7 +16,10 @@ namespace Stickyfoam
         {
             base.PostRemoved();
 
-            Stickyfoam_Tracker.GetDrawer(pawn).coveredInFoam = pawn.health.hediffSet.HasHediff(Stickyfoam_HediffDefOf.CoveredInStickyfoam);
+            if (pawn.health.hediffSet.HasHediff(Stickyfoam_HediffDefOf.CoveredInStickyfoam))
+                Stickyfoam_Tracker.GetDrawer(pawn).coveredInFoam = true;
+            else
+                Stickyfoam_Tracker.RemoveDrawer(pawn);
         }
 
         public override void ExposeData()

@@ -13,8 +13,12 @@ namespace Stickyfoam
         {
             if (!StickyfoamDrawers.ContainsKey(pawn.thingIDNumber))
             {
-                StickyfoamDrawers[pawn.thingIDNumber] = new PawnStickyfoamDrawer(pawn);
-
+                var drawer = new PawnStickyfoamDrawer(pawn) {
+                    coveredInFoam = pawn.health.hediffSet.HasHediff(Stickyfoam_HediffDefOf.CoveredInStickyfoam)
+                };
+                // Render lookups can outlive a coating; retain only live, coated pawns.
+                if (!drawer.coveredInFoam || pawn.Destroyed || pawn.Discarded) return drawer;
+                StickyfoamDrawers[pawn.thingIDNumber] = drawer;
             }
 
             return StickyfoamDrawers[pawn.thingIDNumber];
