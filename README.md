@@ -12,7 +12,7 @@ The continuation deliberately retains `katana.stickyfoam`, existing DefNames and
 
 The original Workshop item's ID is not included in this continuation. A new Workshop item must receive its own ID when publication is separately authorized.
 
-Save compatibility and safe removal from an ongoing colony require testing; unchanged identifiers alone do not prove either. Combat Extended support is outside this port's scope.
+A disposable save created by the unmodified original has passed replacement with this continuation, then save/reload, on the tested RimWorld 1.6 runtime. See the [illustrated compatibility report](docs/COMPATIBILITY_CHECKS.md) for evidence and limitations. Arbitrary existing colonies and safe removal from an ongoing colony remain untested; unchanged identifiers alone do not prove either. Combat Extended support is outside this port's scope.
 
 ## Building
 
