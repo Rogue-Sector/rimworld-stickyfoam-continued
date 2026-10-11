@@ -14,6 +14,12 @@ The original Workshop item's ID is not included in this continuation. A new Work
 
 A disposable save created by the unmodified original has passed replacement with this continuation, then save/reload, on the tested RimWorld 1.6 runtime. See the [illustrated compatibility report](docs/COMPATIBILITY_CHECKS.md) for evidence and limitations. Arbitrary existing colonies and safe removal from an ongoing colony remain untested; unchanged identifiers alone do not prove either. Combat Extended support is outside this port's scope.
 
+## Settings
+
+Open **Options → Mod settings → Stickyfoam Continued**. Settings apply globally across colonies when the window closes. Damage reduction is **off by default**, making coated targets easier to kill than under the original 25% protection. **Reset to defaults** retains the original movement, accuracy and ground effects with protection off; **Original balance** restores the 25% protection too.
+
+Movement and protection affect existing coatings immediately. Ground beauty, cleanliness and cleaning work also update existing foam. Lifetime changes affect new coatings, fresh hits and newly spawned ground foam; existing timers keep their remaining time. Ground lifetime varies by ±25% around the chosen average. Pawn removal takes 10 seconds of game time by default, independently of ground cleaning work; a job retains the duration it started with.
+
 ## Building
 
 With a .NET SDK installed, run:

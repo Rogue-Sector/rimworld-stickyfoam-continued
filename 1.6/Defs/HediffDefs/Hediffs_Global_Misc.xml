@@ -21,8 +21,8 @@
           <ShootingAccuracyFactor_Medium>0.95</ShootingAccuracyFactor_Medium>
           <ShootingAccuracyFactor_Long>0.98</ShootingAccuracyFactor_Long>
 
-          <!-- sticky foam also obscures the target somewhat, and due to its expanding nature it ends up partially insulating against damage -->
-          <IncomingDamageFactor>0.75</IncomingDamageFactor>
+          <!-- damage reduction is optional and disabled by default; the Original balance preset restores 0.75 -->
+          <IncomingDamageFactor>1.0</IncomingDamageFactor>
         </statFactors>
       </li>
     </stages>
