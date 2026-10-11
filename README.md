@@ -2,6 +2,8 @@
 
 A RimWorld 1.6 continuation of [katana's Stickyfoam](https://github.com/katanacrimson/rimworld-stickyfoam), adding mobility-restricting foam through mortar shells and IED traps. Original author credits and the MIT license are retained.
 
+**1.6 beta candidate.** Testing is performed by Codex in disposable colonies; no human playtesting is claimed or required as a release gate. Uninstall from ongoing saves is unsupported, genuine 1.5 migration is unverified, and arbitrary third-party mod combinations are untested. North-facing dusters can hide the inherited foam overlay. Publication remains the owner's decision.
+
 ## Replacing the original
 
 1. Back up your save. Close RimWorld before changing mod files.
@@ -30,7 +32,7 @@ Ordinary interruption allows another automatic attempt after 600 ticks when safe
 
 See the [illustrated settings and removal report](docs/SETTINGS_AND_REMOVAL_CHECKS.md) for settings ranges, actual game checks and remaining work.
 
-The [release-candidate report](docs/RELEASE_CANDIDATE_CHECKS.md) records the expanded official-DLC, persisted-colony, caravan, visual, uninstall and maintenance checks, exact candidate hashes and remaining owner playtest gate. Its pictures include ground foam, coated pawns, apparel and downed-pawn portraits. Public release remains a separate owner decision.
+The [release-candidate report](docs/RELEASE_CANDIDATE_CHECKS.md) records the official-DLC, persisted-colony, caravan, visual, uninstall and maintenance checks, exact candidate hashes, agent-run gameplay scope and remaining limitations. Its pictures include ground foam, coated pawns, apparel and downed-pawn portraits. Supporting evidence documents are bundled with the report. Public release remains a separate owner decision.
 
 ## Building
 
