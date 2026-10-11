@@ -12,7 +12,7 @@ The continuation deliberately retains `katana.stickyfoam`, existing DefNames and
 
 The original Workshop item's ID is not included in this continuation. A new Workshop item must receive its own ID when publication is separately authorized.
 
-A disposable save created by the unmodified original has passed replacement with this continuation, then save/reload, on the tested RimWorld 1.6 runtime. See the [illustrated compatibility report](docs/COMPATIBILITY_CHECKS.md) for evidence and limitations. Arbitrary existing colonies and safe removal from an ongoing colony remain untested; unchanged identifiers alone do not prove either. Combat Extended support is outside this port's scope.
+A disposable save created by the unmodified original has passed replacement with this continuation, then save/reload, on the tested RimWorld 1.6 runtime. See the [illustrated compatibility report](docs/COMPATIBILITY_CHECKS.md) for evidence and limitations. Genuine 1.5-to-1.6 migration is blocked by unavailable historical prerequisites; arbitrary existing colonies remain untested. **Removing the mod from an ongoing save containing foam or removal jobs is unsafe and unsupported.** A test-assisted cleaned fixture passed removal, but it does not establish a normal user preparation workflow. Combat Extended support is outside this port's scope.
 
 ## Settings
 
@@ -29,6 +29,8 @@ Colonists also remove their coating during safe idle time, after normal work and
 Ordinary interruption allows another automatic attempt after 600 ticks when safe. Explicitly cancelling with another order suppresses automatic removal for that coating until a fresh hit or a new manual removal order. This state survives save/reload. Animals, mechs, prisoners and downed pawns retain natural expiry. Removing a pawn's coating leaves ground foam in place and does not cause walk-over recoating.
 
 See the [illustrated settings and removal report](docs/SETTINGS_AND_REMOVAL_CHECKS.md) for settings ranges, actual game checks and remaining work.
+
+The [release-candidate report](docs/RELEASE_CANDIDATE_CHECKS.md) records the expanded official-DLC, persisted-colony, caravan, visual, uninstall and maintenance checks, exact candidate hashes and remaining owner playtest gate. Its pictures include ground foam, coated pawns, apparel and downed-pawn portraits. Public release remains a separate owner decision.
 
 ## Building
 
