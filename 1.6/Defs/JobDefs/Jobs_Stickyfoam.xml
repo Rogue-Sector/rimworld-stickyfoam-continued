@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <JobDef>
+    <defName>Stickyfoam_RemoveFoam</defName>
+    <driverClass>Stickyfoam.JobDriver_RemoveFoam</driverClass>
+    <reportString>Removing foam.</reportString>
+    <playerInterruptible>true</playerInterruptible>
+    <suspendable>false</suspendable>
+    <casualInterruptible>true</casualInterruptible>
+  </JobDef>
+</Defs>
