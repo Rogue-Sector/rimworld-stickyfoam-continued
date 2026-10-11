@@ -20,6 +20,16 @@ Open **Options → Mod settings → Stickyfoam Continued**. Settings apply globa
 
 Movement and protection affect existing coatings immediately. Ground beauty, cleanliness and cleaning work also update existing foam. Lifetime changes affect new coatings, fresh hits and newly spawned ground foam; existing timers keep their remaining time. Ground lifetime varies by ±25% around the chosen average. Pawn removal takes 10 seconds of game time by default, independently of ground cleaning work; a job retains the duration it started with.
 
+## Removing coating
+
+Select an eligible coated colonist and right-click that pawn for **Remove foam**. This timed job is available to awake, undrafted, capable player-controlled humanlike colonists. You may deliberately order it during a raid; drafting, incapacitation or external harmful damage interrupts it.
+
+Colonists also remove their coating during safe idle time, after normal work and needs, even when Cleaning is disabled. Automatic removal waits during active hostile threats, local danger, combat, fleeing, rescue, caravan formation or assigned duties. A threat beginning during removal interrupts the automatic job; its driver rechecks threats every 60 ticks using the game's attack-target cache. Ordering **Remove foam** during an existing automatic job turns it into a manual override without resetting progress.
+
+Ordinary interruption allows another automatic attempt after 600 ticks when safe. Explicitly cancelling with another order suppresses automatic removal for that coating until a fresh hit or a new manual removal order. This state survives save/reload. Animals, mechs, prisoners and downed pawns retain natural expiry. Removing a pawn's coating leaves ground foam in place and does not cause walk-over recoating.
+
+See the [illustrated settings and removal report](docs/SETTINGS_AND_REMOVAL_CHECKS.md) for settings ranges, actual game checks and remaining work.
+
 ## Building
 
 With a .NET SDK installed, run:
