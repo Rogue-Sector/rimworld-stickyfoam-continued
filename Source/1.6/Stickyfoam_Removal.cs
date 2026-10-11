@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using RimWorld;
+using RimWorld.Planet;
+using UnityEngine;
 using Verse;
 using Verse.AI;
 
@@ -34,6 +36,44 @@ namespace Stickyfoam
             return pawn.jobs.TryTakeOrderedJob(
                 JobMaker.MakeJob(DefDatabase<JobDef>.GetNamed("Stickyfoam_RemoveFoam"), pawn), JobTag.Misc);
         }
+
+        public static bool SafeForAuto(Pawn pawn)
+        {
+            return pawn != null && pawn.Spawned && !pawn.IsFormingCaravan()
+                && pawn.mindState.duty == null && !pawn.stances.curStance.StanceBusy
+                && pawn.Position.GetDangerFor(pawn, pawn.Map) == Danger.None
+                && !GenHostility.AnyHostileActiveThreatToPlayer(pawn.Map, false, true);
+        }
+
+        public static bool CanAutoRemove(Pawn pawn)
+        {
+            if (!CanRemove(pawn) || !SafeForAuto(pawn))
+                return false;
+
+            Hediff_CoveredInStickyfoam coating = GetCoating(pawn);
+            if (coating.autoRemovalSuppressed || Find.TickManager.TicksGame < coating.nextAutoRemovalTick
+                || pawn.jobs.jobQueue.Count != 0)
+                return false;
+
+            Job current = pawn.CurJob;
+            return current == null || (!current.playerForced &&
+                (current.def == JobDefOf.Wait || current.def == JobDefOf.Wait_Wander || current.def == JobDefOf.GotoWander));
+        }
+    }
+
+    public class JobGiver_RemoveFoam : ThinkNode_JobGiver
+    {
+        protected override Job TryGiveJob(Pawn pawn)
+        {
+            // Preserve a running maintenance job if a normal job-override check reaches this node.
+            if (pawn.CurJob?.def.defName == "Stickyfoam_RemoveFoam" && !pawn.CurJob.playerForced
+                && FoamRemovalPolicy.CanRemove(pawn) && FoamRemovalPolicy.SafeForAuto(pawn))
+                return pawn.CurJob;
+
+            return FoamRemovalPolicy.CanAutoRemove(pawn)
+                ? JobMaker.MakeJob(DefDatabase<JobDef>.GetNamed("Stickyfoam_RemoveFoam"), pawn)
+                : null;
+        }
     }
 
     public class FloatMenuOptionProvider_RemoveFoam : FloatMenuOptionProvider
@@ -56,6 +96,7 @@ namespace Stickyfoam
     public class JobDriver_RemoveFoam : JobDriver
     {
         private int duration = 600;
+        private int nextSafetyCheckTick;
 
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
@@ -66,19 +107,32 @@ namespace Stickyfoam
         {
             base.Notify_Starting();
             duration = StickyfoamMod.Settings.removalDurationTicks;
+            nextSafetyCheckTick = 0;
         }
 
         public override void ExposeData()
         {
             base.ExposeData();
             Scribe_Values.Look(ref duration, "foamRemovalDuration", 600);
+            duration = Mathf.Clamp(duration, 60, 3600);
         }
 
         protected override IEnumerable<Toil> MakeNewToils()
         {
-            AddEndCondition(() => FoamRemovalPolicy.GetCoating(pawn) == null
-                ? JobCondition.Succeeded
-                : FoamRemovalPolicy.CanRemove(pawn) ? JobCondition.Ongoing : JobCondition.Incompletable);
+            AddEndCondition(() =>
+            {
+                if (FoamRemovalPolicy.GetCoating(pawn) == null)
+                    return JobCondition.Succeeded;
+                if (!FoamRemovalPolicy.CanRemove(pawn))
+                    return JobCondition.Incompletable;
+                if (!job.playerForced && Find.TickManager.TicksGame >= nextSafetyCheckTick)
+                {
+                    nextSafetyCheckTick = Find.TickManager.TicksGame + 60;
+                    if (!FoamRemovalPolicy.SafeForAuto(pawn))
+                        return JobCondition.InterruptForced;
+                }
+                return JobCondition.Ongoing;
+            });
             AddFinishAction(condition =>
             {
                 Hediff_CoveredInStickyfoam coating = FoamRemovalPolicy.GetCoating(pawn);
