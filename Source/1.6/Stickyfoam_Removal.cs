@@ -33,6 +33,12 @@ namespace Stickyfoam
             Hediff_CoveredInStickyfoam coating = GetCoating(pawn);
             coating.autoRemovalSuppressed = false;
             coating.nextAutoRemovalTick = 0;
+            // Vanilla coalesces identical ordered jobs without copying their playerForced flag.
+            if (pawn.CurJob?.def.defName == "Stickyfoam_RemoveFoam")
+            {
+                pawn.CurJob.playerForced = true;
+                return true;
+            }
             return pawn.jobs.TryTakeOrderedJob(
                 JobMaker.MakeJob(DefDatabase<JobDef>.GetNamed("Stickyfoam_RemoveFoam"), pawn), JobTag.Misc);
         }
@@ -106,6 +112,9 @@ namespace Stickyfoam
         public override void Notify_Starting()
         {
             base.Notify_Starting();
+            // Tagged subtrees issue through Humanlike, but their giver keys belong to their own tree.
+            if (job.jobGiver is JobGiver_RemoveFoam)
+                job.jobGiverThinkTree = DefDatabase<ThinkTreeDef>.GetNamed("Stickyfoam_AutomaticRemoval");
             duration = StickyfoamMod.Settings.removalDurationTicks;
             nextSafetyCheckTick = 0;
         }
