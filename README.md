@@ -4,6 +4,8 @@ A RimWorld 1.6 continuation of [katana's Stickyfoam](https://github.com/katanacr
 
 **1.6 beta candidate.** Testing is performed by Codex in disposable colonies; no human playtesting is claimed or required as a release gate. Uninstall from ongoing saves is unsupported, genuine 1.5 migration is unverified, and arbitrary third-party mod combinations are untested. North-facing dusters can hide the inherited foam overlay. Publication remains the owner's decision.
 
+**Current checkpoint:** final beta validation is paused. Read the [current validation status](docs/VALIDATION_STATUS.md) before using the historical reports or PDF as release evidence.
+
 ## Replacing the original
 
 1. Back up your save. Close RimWorld before changing mod files.
