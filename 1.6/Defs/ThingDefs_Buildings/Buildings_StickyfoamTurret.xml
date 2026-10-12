@@ -95,6 +95,7 @@
         <defaultProjectile>Bullet_StickyfoamTurret</defaultProjectile>
         <warmupTime>0</warmupTime>
         <range>20</range>
+        <forcedMissRadius>2</forcedMissRadius>
         <burstShotCount>1</burstShotCount>
         <consumeFuelPerShot>1</consumeFuelPerShot>
         <ai_AvoidFriendlyFireRadius>0</ai_AvoidFriendlyFireRadius>
