@@ -48,7 +48,8 @@ Slowdown, damage reduction, beauty, cleanliness and cleaning work change existin
 - Migrating a save straight from RimWorld 1.5 is untested.
 - Eccentric Tech Defense Grid integration (the M43 Stickyfoam PGM) is untested on 1.6.
 - North-facing dusters can hide the foam overlay.
-- Tested with the base game and all official DLC, and separately with Combat Extended. Other mod combinations are untested.
+- Humanoid Alien Races: foam coats the body, but race add-ons such as ears and tails stay uncoated. Coating and Remove foam still work.
+- Tested with the base game and all official DLC; separately with Combat Extended; and with Vanilla Expanded animal packs, Alpha Animals and Humanoid Alien Races (Revia), where coating fits modded animal shapes. Other mod combinations are untested.
 
 ## Bugs and feedback
 
