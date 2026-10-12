@@ -5,6 +5,9 @@
 First release of the continuation by BiggestFren. Replaces the original; do not enable both.
 
 - Ported to RimWorld 1.6 (built against krafs.rimworld.ref 1.6.4871 and Harmony 2.4.1). RimWorld 1.5 is no longer supported.
+- Added a stickyfoam turret: mini-turret build cost, Stickyfoam and Gun turrets research, 20-tile range, two-tile foam burst and one shot about every five seconds. Fires with allies near the target; friendly fire can coat them.
+- Added machining-table stickyfoam canisters costing 10 steel. Colonists rearm turrets with 10 shots per canister, up to 30 shots; empty turrets stop firing.
+- Replaced pink foam with gold (#E7B921): glossy ground puddles and pawn glaze, matching shells, projectiles, IEDs and the turret's rotating rear capsule. Vanilla turret textures remain untinted.
 - Added a mod settings menu: damage reduction, ground foam beauty, cleanliness, cleaning work and lifetime, pawn slowdown, coating duration and removal time. Includes **Reset to defaults** and **Original balance**.
 - **Balance change:** the coating's 25% damage reduction is now off by default, so coated targets are easier to kill. **Original balance** turns it back on.
 - Added **Remove foam**: right-click a coated colonist to have them scrape the foam off. This is a timed job you can order even during a raid.

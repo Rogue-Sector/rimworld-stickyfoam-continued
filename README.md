@@ -1,6 +1,6 @@
 # Stickyfoam Continued
 
-A RimWorld 1.6 continuation of [katana's Stickyfoam](https://github.com/katanacrimson/rimworld-stickyfoam). Stickyfoam mortar shells and IED traps coat enemies in foam that slows them down and throws off their aim, and leave sticky foam on the ground.
+A RimWorld 1.6 continuation of [katana's Stickyfoam](https://github.com/katanacrimson/rimworld-stickyfoam). Stickyfoam mortar shells, IED traps and turrets coat targets in foam that slows them down and throws off their aim. Gold glossy puddles cover the ground, and a matching glossy glaze coats pawns.
 
 **Beta.** Original author credits and the MIT license are retained. Requires [Harmony](https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077).
 
@@ -13,6 +13,12 @@ This mod replaces the original Stickyfoam and uses the same package ID, so **ena
 3. Enable Stickyfoam Continued after Harmony.
 
 Existing foam, shells and traps carry over.
+
+## Stickyfoam turret
+
+A 1×1 automatic turret with the vanilla mini-turret's build cost. Requires **Stickyfoam** and **Gun turrets** research. It fires one foam shot about every five seconds, with a 20-tile range and a two-tile burst radius. Friendly fire is enabled: nearby colonists can be coated too.
+
+Make **stickyfoam canisters** at a machining table after Stickyfoam research, for **10 steel** each. Colonists haul them to rearm the turret. Each canister adds **10 shots**, up to **30**; an empty turret stops firing. The untinted vanilla turret has a gold-banded rear capsule that turns with its gun.
 
 ## Settings
 
