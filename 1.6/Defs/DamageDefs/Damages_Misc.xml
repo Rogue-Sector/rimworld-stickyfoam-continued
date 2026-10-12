@@ -9,7 +9,7 @@
     <defaultDamage>20</defaultDamage>
     <hediff>CoveredInStickyfoam</hediff>
     <explosionCellFleck>BlastExtinguisher</explosionCellFleck>
-    <explosionColorEdge>(1, 0.5, 1, 0.05)</explosionColorEdge>
+    <explosionColorEdge>(0.905882, 0.725490, 0.129412, 0.05)</explosionColorEdge>
     <soundExplosion>Explosion_Stun</soundExplosion>
     <combatLogRules>Damage_Stickyfoamed</combatLogRules>
   </DamageDef>

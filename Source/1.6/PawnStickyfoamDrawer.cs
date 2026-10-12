@@ -7,7 +7,7 @@ namespace Stickyfoam
 {
     public class PawnStickyfoamDrawer : PawnOverlayDrawer
     {
-        public readonly Color StickyfoamColor = new Color(0.83f, 0.62f, 0.83f, 1f);
+        public readonly Color StickyfoamColor = Color.white;
 
         public bool coveredInFoam;
 
