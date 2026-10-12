@@ -14,8 +14,9 @@ First release of the continuation by BiggestFren. Replaces the original; do not 
 - Added **Remove foam**: right-click a coated colonist to have them scrape the foam off. This is a timed job you can order even during a raid.
 - Colonists now remove their own coating during safe idle time, without needing the Cleaning work type. They won't stop to do it during raids, combat, fleeing, rescues or caravan forming.
 - Fixed coating overlay data being kept in memory for pawns after their coating ended or they were destroyed.
+- Fixed foam being hidden by north-facing shell apparel, including dusters, parkas and flak jackets. Other directions, coating effects and the existing texture masks are unchanged.
 - Removed the original mod's Workshop ID from the package.
-- Known limitations: removing the mod from an ongoing save is unsupported; migrating saves from RimWorld 1.5 is untested; Eccentric Tech Defense Grid integration is untested on 1.6; north-facing dusters can hide the foam overlay; on Humanoid Alien Races pawns, add-ons such as ears and tails stay uncoated.
+- Known limitations: removing the mod from an ongoing save is unsupported; migrating saves from RimWorld 1.5 is untested; Eccentric Tech Defense Grid integration is untested on 1.6; on Humanoid Alien Races pawns, add-ons such as ears and tails stay uncoated.
 
 
 #### v1.0.0-beta4
