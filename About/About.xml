@@ -4,7 +4,7 @@
   <author>katana (original); BiggestFren (continuation)</author>
   <packageId>katana.stickyfoam</packageId>
   <modVersion>2.0.0-beta1</modVersion>
-  <description>Beta continuation of katana's Stickyfoam for RimWorld 1.6. Adds mobility-restricting foam through mortar rounds and IED traps. Replaces the original Stickyfoam: disable the original before enabling this continuation. Uninstall from ongoing saves is unsupported. Genuine 1.5 migration and arbitrary third-party mod compatibility are unverified; north-facing dusters can hide coating. Original author: katana; original MIT license retained.</description>
+  <description>Beta continuation of katana's Stickyfoam for RimWorld 1.6. Adds mobility-restricting foam through mortar rounds and IED traps. Replaces the original Stickyfoam: disable the original before enabling this continuation. Uninstall from ongoing saves is unsupported. Genuine 1.5 migration and arbitrary third-party mod compatibility are unverified. Original author: katana; original MIT license retained.</description>
   <supportedVersions>
     <li>1.6</li>
   </supportedVersions>

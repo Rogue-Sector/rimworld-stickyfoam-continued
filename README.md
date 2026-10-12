@@ -47,7 +47,6 @@ Slowdown, damage reduction, beauty, cleanliness and cleaning work change existin
 - **Don't remove this mod from an ongoing save** that has used it. Keep it installed, or go back to a save from before you added it.
 - Migrating a save straight from RimWorld 1.5 is untested.
 - Eccentric Tech Defense Grid integration (the M43 Stickyfoam PGM) is untested on 1.6.
-- North-facing dusters can hide the foam overlay.
 - Tested with the base game and all official DLC, and separately with Combat Extended. Other mod combinations are untested.
 
 ## Bugs and feedback
