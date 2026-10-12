@@ -7,6 +7,7 @@ First release of the continuation by BiggestFren. Replaces the original; do not 
 - Ported to RimWorld 1.6 (built against krafs.rimworld.ref 1.6.4871 and Harmony 2.4.1). RimWorld 1.5 is no longer supported.
 - Added a stickyfoam turret: mini-turret build cost, Stickyfoam and Gun turrets research, 20-tile range, two-tile foam burst and one shot about every five seconds. Fires with allies near the target; friendly fire can coat them.
 - Added machining-table stickyfoam canisters costing 10 steel. Colonists rearm turrets with 10 shots per canister, up to 30 shots; empty turrets stop firing.
+- Added Combat Extended mortar support: stickyfoam shells use CE's 81mm ammo system while retaining their gold art, 25-steel machining recipe and Stickyfoam research. Verified mortar loading/firing and loaded-shell save/reload, stickyfoam IED construction/triggering, and turret canister rearming/firing under CE.
 - Replaced pink foam with gold (#E7B921): glossy ground puddles and pawn glaze, matching shells, projectiles, IEDs and the turret's rotating rear capsule. Vanilla turret textures remain untinted.
 - Added a mod settings menu: damage reduction, ground foam beauty, cleanliness, cleaning work and lifetime, pawn slowdown, coating duration and removal time. Includes **Reset to defaults** and **Original balance**.
 - **Balance change:** the coating's 25% damage reduction is now off by default, so coated targets are easier to kill. **Original balance** turns it back on.
@@ -14,7 +15,7 @@ First release of the continuation by BiggestFren. Replaces the original; do not 
 - Colonists now remove their own coating during safe idle time, without needing the Cleaning work type. They won't stop to do it during raids, combat, fleeing, rescues or caravan forming.
 - Fixed coating overlay data being kept in memory for pawns after their coating ended or they were destroyed.
 - Removed the original mod's Workshop ID from the package.
-- Known limitations: removing the mod from an ongoing save is unsupported; migrating saves from RimWorld 1.5 is untested; Combat Extended is unsupported; Eccentric Tech Defense Grid integration is untested on 1.6; north-facing dusters can hide the foam overlay.
+- Known limitations: removing the mod from an ongoing save is unsupported; migrating saves from RimWorld 1.5 is untested; Eccentric Tech Defense Grid integration is untested on 1.6; north-facing dusters can hide the foam overlay.
 
 
 #### v1.0.0-beta4

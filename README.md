@@ -20,6 +20,10 @@ A 1×1 automatic turret with the vanilla mini-turret's build cost. Requires **St
 
 Make **stickyfoam canisters** at a machining table after Stickyfoam research, for **10 steel** each. Colonists haul them to rearm the turret. Each canister adds **10 shots**, up to **30**; an empty turret stops firing. The untinted vanilla turret has a gold-banded rear capsule that turns with its gun.
 
+## Combat Extended
+
+Combat Extended is supported for **mortar shells, stickyfoam IEDs and the stickyfoam turret**. Load Stickyfoam Continued after Combat Extended. Craft stickyfoam shells at the machining table after **Stickyfoam** research, for **25 steel** each, and select **stickyfoam** ammunition on a CE 81mm mortar. Shells coat targets and leave gold ground foam. The turret continues to use stickyfoam canisters.
+
 ## Settings
 
 **Options → Mod settings → Stickyfoam Continued.** Settings are global and apply when you close the window.
@@ -42,10 +46,9 @@ Slowdown, damage reduction, beauty, cleanliness and cleaning work change existin
 
 - **Don't remove this mod from an ongoing save** that has used it. Keep it installed, or go back to a save from before you added it.
 - Migrating a save straight from RimWorld 1.5 is untested.
-- Combat Extended is not supported.
 - Eccentric Tech Defense Grid integration (the M43 Stickyfoam PGM) is untested on 1.6.
 - North-facing dusters can hide the foam overlay.
-- Tested with the base game and all official DLC. Other mod combinations are untested.
+- Tested with the base game and all official DLC, and separately with Combat Extended. Other mod combinations are untested.
 
 ## Bugs and feedback
 

@@ -3,6 +3,7 @@
   <v1.6>
     <li>/</li>
     <li>1.6</li>
+    <li IfModActive="CETeam.CombatExtended">ModPatches/CombatExtended/1.6</li>
     <!-- todo: uncomment and remove other li's when we support CE
     <li IfModActive="CETeam.CombatExtended">ModPatches/CombatExtended/1.5</li>
     <li IfModActive="Aelanna.EccentricTech.DefenseGrid">ModPatches/EccentricTechDefenseGridShared</li>

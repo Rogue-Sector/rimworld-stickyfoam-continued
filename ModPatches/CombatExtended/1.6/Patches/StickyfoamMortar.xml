@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Replace the single vanilla definition before inheritance is resolved. -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Shell_Stickyfoam"]</xpath>
+    <value>
+      <ThingDef Class="CombatExtended.AmmoDef" ParentName="81mmMortarShellBase">
+        <defName>Shell_Stickyfoam</defName>
+        <label>stickyfoam shell</label>
+        <description>A pressurized shell filled with mobility-reducing stickyfoam. Can be fired from mortars or installed as a trap. Explodes when damaged.</description>
+        <possessionCount>2</possessionCount>
+        <graphicData>
+          <texPath>Things/Item/Resource/Shell/Shell_Stickyfoam</texPath>
+          <graphicClass>Graphic_StackCount</graphicClass>
+        </graphicData>
+        <statBases>
+          <Mass>4.1</Mass>
+          <Bulk>10.01</Bulk>
+        </statBases>
+        <ammoClass>AmmoCategory_Stickyfoam</ammoClass>
+        <detonateProjectile>Bullet_81mmMortarShell_Stickyfoam</detonateProjectile>
+        <isMortarAmmo>true</isMortarAmmo>
+        <spawnAsSiegeAmmo>false</spawnAsSiegeAmmo>
+        <costList>
+          <Steel>25</Steel>
+        </costList>
+        <recipeMaker>
+          <researchPrerequisite>Stickyfoam</researchPrerequisite>
+          <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+          <effectWorking>Cook</effectWorking>
+          <soundWorking>Recipe_Machining</soundWorking>
+          <workAmount>800</workAmount>
+          <targetCountAdjustment>5</targetCountAdjustment>
+          <workSkill>Crafting</workSkill>
+          <recipeUsers>
+            <li>TableMachining</li>
+          </recipeUsers>
+          <skillRequirements>
+            <Crafting>4</Crafting>
+          </skillRequirements>
+          <displayPriority>100</displayPriority>
+        </recipeMaker>
+      </ThingDef>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/CombatExtended.AmmoSetDef[defName="AmmoSet_81mmMortarShell"]/ammoTypes</xpath>
+    <value>
+      <Shell_Stickyfoam>Bullet_81mmMortarShell_Stickyfoam</Shell_Stickyfoam>
+    </value>
+  </Operation>
+</Patch>
