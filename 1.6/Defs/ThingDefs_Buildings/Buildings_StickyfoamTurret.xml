@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BuildingBase">
+    <defName>Turret_Stickyfoam</defName>
+    <label>stickyfoam turret</label>
+    <description>An automatic short-range turret that sprays gold stickyfoam to slow targets and disrupt their aim. Fires one shot about every five seconds, up to 20 tiles away, coating pawns and the ground within a two-tile radius. Colonists rearm it with stickyfoam canisters: 10 shots per canister, 30 shots maximum. An empty turret cannot fire. Its mounted rear capsule turns with the gun. Beware of friendly fire; it will fire even with allies near the target. May explode when damaged.</description>
+    <thingClass>Stickyfoam.Building_StickyfoamTurret</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <drawHighlight>true</drawHighlight>
+    <drawHighlightOnlyForHostile>true</drawHighlightOnlyForHostile>
+    <graphicData>
+      <texPath>Things/Building/Security/TurretMini_Base</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <damageData><rect>(0.2,0.2,0.6,0.6)</rect></damageData>
+      <shadowData><volume>(0.27,0.25,0.27)</volume><offset>(0,0,0)</offset></shadowData>
+    </graphicData>
+    <uiIconPath>Things/Building/Security/TurretMini_MenuIcon</uiIconPath>
+    <uiIconScale>0.90</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>false</rotatable>
+    <size>(1,1)</size>
+    <thingCategories><li>BuildingsSecurity</li></thingCategories>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>0.7</Flammability>
+      <WorkToBuild>1800</WorkToBuild>
+      <Mass>8</Mass>
+      <Beauty>-20</Beauty>
+      <ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <wickTicks>240</wickTicks>
+        <explosiveRadius>3.9</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+      </li>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Power"><compClass>CompPowerTrader</compClass><basePowerConsumption>80</basePowerConsumption></li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_Refuelable">
+        <fuelLabel>Foam shots remaining</fuelLabel>
+        <fuelGizmoLabel>Stickyfoam ammunition</fuelGizmoLabel>
+        <outOfFuelMessage>Needs stickyfoam canisters</outOfFuelMessage>
+        <fuelFilter><thingDefs><li>StickyfoamCanister</li></thingDefs></fuelFilter>
+        <fuelCapacity>30</fuelCapacity>
+        <fuelMultiplier>10</fuelMultiplier>
+        <initialFuelPercent>0</initialFuelPercent>
+        <autoRefuelPercent>1</autoRefuelPercent>
+        <showFuelGizmo>true</showFuelGizmo>
+        <minimumFueledThreshold>1</minimumFueledThreshold>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <fuelIconPath>Things/Item/Resource/StickyfoamCanister</fuelIconPath>
+      </li>
+      <li Class="CompProperties_Stunnable"><affectedDamageDefs><li>Stun</li><li>EMP</li></affectedDamageDefs></li>
+    </comps>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <stuffCategories><li>Metallic</li></stuffCategories>
+    <costStuffCount>30</costStuffCount>
+    <costList><Steel>70</Steel><ComponentIndustrial>3</ComponentIndustrial></costList>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+    <building>
+      <combatPower>45</combatPower>
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <turretGunDef>Gun_StickyfoamTurret</turretGunDef>
+      <turretBurstWarmupTime>0</turretBurstWarmupTime>
+      <turretBurstCooldownTime>5</turretBurstCooldownTime>
+    </building>
+    <placeWorkers><li>PlaceWorker_TurretTop</li><li>PlaceWorker_ShowTurretRadius</li></placeWorkers>
+    <researchPrerequisites><li>GunTurrets</li><li>Stickyfoam</li></researchPrerequisites>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>Gun_StickyfoamTurret</defName>
+    <label>stickyfoam turret gun</label>
+    <description>A short-range foam gun mounted on a stickyfoam turret.</description>
+    <graphicData><texPath>Things/Building/Security/TurretMini_Top</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <statBases>
+      <AccuracyTouch>0.77</AccuracyTouch><AccuracyShort>0.70</AccuracyShort><AccuracyMedium>0.45</AccuracyMedium><AccuracyLong>0.24</AccuracyLong>
+      <RangedWeapon_Cooldown>5</RangedWeapon_Cooldown><DeteriorationRate>0</DeteriorationRate><Mass>5</Mass><Flammability>0</Flammability>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <defaultProjectile>Bullet_StickyfoamTurret</defaultProjectile>
+        <warmupTime>0</warmupTime>
+        <range>20</range>
+        <burstShotCount>1</burstShotCount>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+        <ai_AvoidFriendlyFireRadius>0</ai_AvoidFriendlyFireRadius>
+        <soundCast>GunShotA</soundCast><soundCastTail>GunTail_Light</soundCastTail><muzzleFlashScale>1</muzzleFlashScale>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_StickyfoamTurret</defName>
+    <label>stickyfoam burst</label>
+    <description>A short-range burst of stickyfoam that coats nearby pawns and leaves sticky puddles.</description>
+    <graphicData><texPath>Things/Projectile/ShellStickyfoam</texPath><graphicClass>Graphic_Single</graphicClass><shaderType>TransparentPostLight</shaderType></graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>Stickyfoam</damageDef>
+      <speed>55</speed>
+      <explosionRadius>2</explosionRadius>
+      <soundExplode>Explosion_EMP</soundExplode>
+      <postExplosionSpawnThingDef>Filth_Stickyfoam</postExplosionSpawnThingDef>
+      <postExplosionSpawnChance>1</postExplosionSpawnChance>
+      <postExplosionSpawnThingCount>1</postExplosionSpawnThingCount>
+      <explosionEffect>ExtinguisherExplosion</explosionEffect>
+    </projectile>
+  </ThingDef>
+</Defs>

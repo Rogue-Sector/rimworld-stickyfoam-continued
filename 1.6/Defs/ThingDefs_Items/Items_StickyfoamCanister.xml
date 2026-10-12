@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ResourceBase">
+    <defName>StickyfoamCanister</defName>
+    <label>stickyfoam canister</label>
+    <description>A pressurized canister of gold stickyfoam for rearming a stickyfoam turret. Each canister supplies 10 shots; the turret holds 30 shots. Made at a machining table from 10 steel.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/StickyfoamCanister</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stackLimit>25</stackLimit>
+    <thingCategories><li>Manufactured</li></thingCategories>
+    <statBases>
+      <MarketValue>16</MarketValue>
+      <Mass>0.5</Mass>
+      <MaxHitPoints>60</MaxHitPoints>
+      <Flammability>0.5</Flammability>
+      <WorkToMake>600</WorkToMake>
+    </statBases>
+    <costList><Steel>10</Steel></costList>
+    <recipeMaker>
+      <researchPrerequisite>Stickyfoam</researchPrerequisite>
+      <recipeUsers><li>TableMachining</li></recipeUsers>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+    </recipeMaker>
+  </ThingDef>
+</Defs>
