@@ -10,6 +10,7 @@ First release of the continuation by BiggestFren. Replaces the original; do not 
 - Added Combat Extended mortar support: stickyfoam shells use CE's 81mm ammo system while retaining their gold art, 25-steel machining recipe and Stickyfoam research. Verified mortar loading/firing and loaded-shell save/reload, stickyfoam IED construction/triggering, and turret canister rearming/firing under CE.
 - Replaced pink foam with gold (#E7B921): glossy ground puddles and pawn glaze, matching shells, projectiles, IEDs and the turret's rotating rear capsule. Vanilla turret textures remain untinted.
 - Added a mod settings menu: damage reduction, ground foam beauty, cleanliness, cleaning work and lifetime, pawn slowdown, coating duration and removal time. Includes **Reset to defaults** and **Original balance**.
+- Made settings and the Remove foam action translatable through standard language files, with English fallback. The settings scroll area expands for longer translations.
 - **Balance change:** the coating's 25% damage reduction is now off by default, so coated targets are easier to kill. **Original balance** turns it back on.
 - Added **Remove foam**: right-click a coated colonist to have them scrape the foam off. This is a timed job you can order even during a raid.
 - Colonists now remove their own coating during safe idle time, without needing the Cleaning work type. They won't stop to do it during raids, combat, fleeing, rescues or caravan forming.

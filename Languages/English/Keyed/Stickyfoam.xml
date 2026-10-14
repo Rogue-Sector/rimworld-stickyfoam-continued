@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Stickyfoam_SettingsCategory>Stickyfoam Continued</Stickyfoam_SettingsCategory>
+  <Stickyfoam_GlobalSettings>Global settings for all colonies. Changes apply when this window closes.</Stickyfoam_GlobalSettings>
+  <Stickyfoam_DamageReduction>Damage reduction</Stickyfoam_DamageReduction>
+  <Stickyfoam_ProtectionStrength>Protection strength: {0}</Stickyfoam_ProtectionStrength>
+  <Stickyfoam_DamageReductionInfo>Off by default: coated targets are easier to kill than with the original 25% damage reduction. This does not add armour.</Stickyfoam_DamageReductionInfo>
+  <Stickyfoam_GroundFoam>Ground foam</Stickyfoam_GroundFoam>
+  <Stickyfoam_Beauty>Beauty: {0}</Stickyfoam_Beauty>
+  <Stickyfoam_Cleanliness>Cleanliness: {0}</Stickyfoam_Cleanliness>
+  <Stickyfoam_CleaningWork>Cleaning work: {0}</Stickyfoam_CleaningWork>
+  <Stickyfoam_GroundLifetime>Average lifetime (days): {0}</Stickyfoam_GroundLifetime>
+  <Stickyfoam_PawnCoating>Pawn coating</Stickyfoam_PawnCoating>
+  <Stickyfoam_MovementSlowdown>Movement slowdown: {0}</Stickyfoam_MovementSlowdown>
+  <Stickyfoam_CoatingDuration>Coating duration (seconds): {0}</Stickyfoam_CoatingDuration>
+  <Stickyfoam_RemovalDuration>Pawn removal time (seconds): {0}</Stickyfoam_RemovalDuration>
+  <Stickyfoam_SettingsApplyInfo>Speed, protection, ground beauty/cleanliness and cleaning work change on existing foam. Lifetimes apply to fresh coatings/hits and newly spawned ground foam; existing timers keep their remaining time. A removal job keeps the duration it started with. Seconds are game time.</Stickyfoam_SettingsApplyInfo>
+  <Stickyfoam_ResetToDefaults>Reset to defaults</Stickyfoam_ResetToDefaults>
+  <Stickyfoam_OriginalBalance>Original balance</Stickyfoam_OriginalBalance>
+  <Stickyfoam_RemoveFoam>Remove foam</Stickyfoam_RemoveFoam>
+</LanguageData>

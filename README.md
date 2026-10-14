@@ -50,6 +50,10 @@ Slowdown, damage reduction, beauty, cleanliness and cleaning work change existin
 - Humanoid Alien Races: foam coats the body, but race add-ons such as ears and tails stay uncoated. Coating and Remove foam still work.
 - Tested with the base game and all official DLC; separately with Combat Extended; and with Vanilla Expanded animal packs, Alpha Animals and Humanoid Alien Races (Revia), where coating fits modded animal shapes. Other mod combinations are untested.
 
+## Translations
+
+Translation contributions are welcome. Copy [the English UI strings](Languages/English/Keyed/Stickyfoam.xml) into `Languages/<language>/Keyed/`, keeping the keys and `{0}` placeholders intact. Item names, descriptions, research and job text use RimWorld's standard `DefInjected` translations. English is used when a translation is missing.
+
 ## Bugs and feedback
 
 Please report bugs with your `Player.log` and your mod list.

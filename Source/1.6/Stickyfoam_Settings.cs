@@ -73,6 +73,7 @@ namespace Stickyfoam
     {
         public static StickyfoamSettings Settings;
         private Vector2 scrollPosition;
+        private float settingsHeight = 660f;
 
         public StickyfoamMod(ModContentPack content) : base(content)
         {
@@ -80,7 +81,7 @@ namespace Stickyfoam
             LongEventHandler.ExecuteWhenFinished(ApplySettings);
         }
 
-        public override string SettingsCategory() { return "Stickyfoam Continued"; }
+        public override string SettingsCategory() { return "Stickyfoam_SettingsCategory".Translate(); }
 
         public static void ApplySettings()
         {
@@ -120,30 +121,31 @@ namespace Stickyfoam
         public override void DoSettingsWindowContents(Rect inRect)
         {
             Settings.Validate();
-            Rect view = new Rect(0f, 0f, inRect.width - 20f, 660f);
+            Rect view = new Rect(0f, 0f, inRect.width - 20f, settingsHeight);
             Widgets.BeginScrollView(inRect, ref scrollPosition, view);
             Listing_Standard listing = new Listing_Standard();
             listing.Begin(view);
-            listing.Label("Global settings for all colonies. Changes apply when this window closes.");
-            listing.CheckboxLabeled("Damage reduction", ref Settings.damageReductionEnabled);
-            Settings.damageReduction = listing.SliderLabeled("Protection strength: " + Settings.damageReduction.ToString("P0"), Settings.damageReduction, 0f, 0.75f);
-            listing.Label("Off by default: coated targets are easier to kill than with the original 25% damage reduction. This does not add armour.");
+            listing.Label("Stickyfoam_GlobalSettings".Translate());
+            listing.CheckboxLabeled("Stickyfoam_DamageReduction".Translate(), ref Settings.damageReductionEnabled);
+            Settings.damageReduction = listing.SliderLabeled("Stickyfoam_ProtectionStrength".Translate(Settings.damageReduction.ToString("P0")), Settings.damageReduction, 0f, 0.75f);
+            listing.Label("Stickyfoam_DamageReductionInfo".Translate());
             listing.GapLine();
-            listing.Label("Ground foam");
-            Settings.groundBeauty = listing.SliderLabeled("Beauty: " + Settings.groundBeauty.ToString("F0"), Settings.groundBeauty, -100f, 0f);
-            Settings.groundCleanliness = listing.SliderLabeled("Cleanliness: " + Settings.groundCleanliness.ToString("F0"), Settings.groundCleanliness, -50f, 0f);
-            Settings.groundCleaningWork = listing.SliderLabeled("Cleaning work: " + Settings.groundCleaningWork.ToString("F0"), Settings.groundCleaningWork, 1f, 1500f);
-            Settings.groundLifetimeDays = listing.SliderLabeled("Average lifetime (days): " + Settings.groundLifetimeDays.ToString("F1"), Settings.groundLifetimeDays, 0.1f, 30f);
+            listing.Label("Stickyfoam_GroundFoam".Translate());
+            Settings.groundBeauty = listing.SliderLabeled("Stickyfoam_Beauty".Translate(Settings.groundBeauty.ToString("F0")), Settings.groundBeauty, -100f, 0f);
+            Settings.groundCleanliness = listing.SliderLabeled("Stickyfoam_Cleanliness".Translate(Settings.groundCleanliness.ToString("F0")), Settings.groundCleanliness, -50f, 0f);
+            Settings.groundCleaningWork = listing.SliderLabeled("Stickyfoam_CleaningWork".Translate(Settings.groundCleaningWork.ToString("F0")), Settings.groundCleaningWork, 1f, 1500f);
+            Settings.groundLifetimeDays = listing.SliderLabeled("Stickyfoam_GroundLifetime".Translate(Settings.groundLifetimeDays.ToString("F1")), Settings.groundLifetimeDays, 0.1f, 30f);
             listing.GapLine();
-            listing.Label("Pawn coating");
+            listing.Label("Stickyfoam_PawnCoating".Translate());
             float slowdown = 1f - Settings.movementFactor;
-            slowdown = listing.SliderLabeled("Movement slowdown: " + slowdown.ToString("P0"), slowdown, 0f, 0.9f);
+            slowdown = listing.SliderLabeled("Stickyfoam_MovementSlowdown".Translate(slowdown.ToString("P0")), slowdown, 0f, 0.9f);
             Settings.movementFactor = 1f - slowdown;
-            Settings.coatingDurationTicks = Mathf.RoundToInt(60f * listing.SliderLabeled("Coating duration (seconds): " + (Settings.coatingDurationTicks / 60f).ToString("F0"), Settings.coatingDurationTicks / 60f, 1f, 1000f));
-            Settings.removalDurationTicks = Mathf.RoundToInt(60f * listing.SliderLabeled("Pawn removal time (seconds): " + (Settings.removalDurationTicks / 60f).ToString("F0"), Settings.removalDurationTicks / 60f, 1f, 60f));
-            listing.Label("Speed, protection, ground beauty/cleanliness and cleaning work change on existing foam. Lifetimes apply to fresh coatings/hits and newly spawned ground foam; existing timers keep their remaining time. A removal job keeps the duration it started with. Seconds are game time.");
-            if (listing.ButtonText("Reset to defaults")) Settings.ResetToDefaults();
-            if (listing.ButtonText("Original balance")) Settings.OriginalBalance();
+            Settings.coatingDurationTicks = Mathf.RoundToInt(60f * listing.SliderLabeled("Stickyfoam_CoatingDuration".Translate((Settings.coatingDurationTicks / 60f).ToString("F0")), Settings.coatingDurationTicks / 60f, 1f, 1000f));
+            Settings.removalDurationTicks = Mathf.RoundToInt(60f * listing.SliderLabeled("Stickyfoam_RemovalDuration".Translate((Settings.removalDurationTicks / 60f).ToString("F0")), Settings.removalDurationTicks / 60f, 1f, 60f));
+            listing.Label("Stickyfoam_SettingsApplyInfo".Translate());
+            if (listing.ButtonText("Stickyfoam_ResetToDefaults".Translate())) Settings.ResetToDefaults();
+            if (listing.ButtonText("Stickyfoam_OriginalBalance".Translate())) Settings.OriginalBalance();
+            settingsHeight = listing.CurHeight + 10f;
             listing.End();
             Widgets.EndScrollView();
         }

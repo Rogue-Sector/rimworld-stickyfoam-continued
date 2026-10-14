@@ -95,7 +95,7 @@ namespace Stickyfoam
             if (clickedPawn != context.FirstSelectedPawn || !FoamRemovalPolicy.CanRemove(clickedPawn))
                 return null;
 
-            return new FloatMenuOption("Remove foam", () => FoamRemovalPolicy.OrderRemoval(clickedPawn));
+            return new FloatMenuOption("Stickyfoam_RemoveFoam".Translate(), () => FoamRemovalPolicy.OrderRemoval(clickedPawn));
         }
     }
 
