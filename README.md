@@ -53,7 +53,3 @@ Slowdown, damage reduction, beauty, cleanliness and cleaning work change existin
 ## Bugs and feedback
 
 Please report bugs with your `Player.log` and your mod list.
-
-## Development
-
-See [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) for building, packaging and test records.
