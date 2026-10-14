@@ -19,10 +19,11 @@ The release package contains `About/`, `1.6/` (with `Assemblies/Stickyfoam.dll`)
 
 ## Testing
 
-Testing was done by Codex in disposable colonies; no human playtesting was done. Records:
+Tested by Codex in disposable colonies (no human playtest) on RimWorld 1.6.4871: Core and all five official DLC, Combat Extended 16.7.3, Vanilla Expanded animal packs, Alpha Animals and Humanoid Alien Races (Revia). Detailed development reports and screenshots are retained in the local backup, rather than in this repository.
 
-- [Validation status](VALIDATION_STATUS.md): current state and what is out of scope.
-- [Compatibility checks](COMPATIBILITY_CHECKS.md): the 1.6 port baseline, including replacing the original mod in a 1.6 save.
-- [Settings and removal checks](SETTINGS_AND_REMOVAL_CHECKS.md): settings ranges and removal behaviour.
-- [Release candidate checks](RELEASE_CANDIDATE_CHECKS.md): DLC, caravan, visual, uninstall and maintenance runs.
-- [Release candidate report (PDF)](../output/pdf/Stickyfoam-Continued-Release-Candidate-Report.pdf).
+When testing locally, never touch the real game setup:
+
+- Launch with `-savedatafolder=PATH` (no space after `=`) pointing at a throwaway folder, and confirm it before the game starts.
+- Hold the read-only guard on the real `Config` files for every launch, including the first.
+- Use a throwaway mods folder with only Harmony and the built package. Never modify the real Mods folder, saves or Workshop subscriptions.
+- The disposable setup and launch helper live under `%LOCALAPPDATA%\stickyfoam-dev\` on the development PC; screenshots go in the gitignored `playtest-screenshots/` folder.
